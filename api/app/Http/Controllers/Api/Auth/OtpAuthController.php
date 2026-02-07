@@ -19,6 +19,13 @@ class OtpAuthController extends Controller
     {
         $result = $this->otpService->sendOtp($request->phone);
 
+        if (!$result['success']) {
+            return response()->json([
+                'success' => false,
+                'message' => $result['message'],
+            ], 400);
+        }
+
         return response()->json([
             'success' => $result['success'],
             'message' => $result['message'],

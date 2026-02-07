@@ -11,7 +11,7 @@ return [
     'twilio' => [
         'sid' => env('TWILIO_SID'),
         'auth_token' => env('TWILIO_AUTH_TOKEN'),
-        'phone_number' => env('TWILIO_PHONE_NUMBER'),
+        'verify_sid' => env('TWILIO_VERIFY_SID'),
     ],
 
     /*
@@ -23,6 +23,7 @@ return [
     'otp' => [
         'length' => 6,
         'expiry_minutes' => 10,
+        'default_country_code' => env('DEFAULT_COUNTRY_CODE', '+91'),
     ],
 
     /*
